@@ -40,7 +40,7 @@ st.write("A quick and dirty app to see how your MPCNC might look based on your c
 st.sidebar.header("Colours")
 
 colA = st.sidebar.color_picker("Colour A", "#000000")
-colB = st.sidebar.color_picker("Colour B", "#FF0000")
+colB = st.sidebar.color_picker("Colour B", "#8E2626")
 
 st.sidebar.header("TO DO")
 st.sidebar.write("""
@@ -50,14 +50,14 @@ Know how to fix it? Help at:
 https://github.com/ConorIA/mpcnc-colour
 """)
 
-colourA = Image.open("coloura.png")
+colourA = Image.open("coloura_bw.png")
 tintA = image_tint(colourA, colA)
 
-colourB = Image.open("colourb.png")
+colourB = Image.open("colourb_bw.png")
 tintB = image_tint(colourB, colB)
 
 primo = Image.open("Primo-scaled.jpg")
-primo.paste(tintA, mask=colourA)
-primo.paste(tintB, mask=colourB)
+primo.paste(tintA, mask=tintA)
+primo.paste(tintB, mask=tintB)
 
 st.image(primo)
