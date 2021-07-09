@@ -60,4 +60,4 @@ primo = Image.open("Primo-scaled.jpg")
 primo.paste(tintA, mask=tintA)
 primo.paste(tintB, mask=tintB)
 
-st.image(primo)
+st.image(primo, use_column_width=True)
